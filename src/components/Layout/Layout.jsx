@@ -14,7 +14,7 @@ const Layout = () => {
           </Link>
         </nav>
       </header>
-      <Outlet /> //Динамические стр.
+      <Outlet /> 
       <footer className="footer__box">
         <p>KINO-FICHA</p>
       </footer>
