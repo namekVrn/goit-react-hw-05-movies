@@ -1,0 +1,55 @@
+.resultmovieslist__link {
+  color: azure;
+  text-decoration: none;
+}
+.resultmovieslist__preview {
+  
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #1b3946,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1b3946,
+    #1b3946,
+    #1b3946
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.resultmovieslist__itemFilm {
+  display: flex;
+  border: 1px solid #285163;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.resultmovieslist__itemFilm--link:last-child {
+  margin-bottom: 0px;
+}
+.resultmovieslist__shortdescription {
+    position: relative;
+    width: 100%;
+  padding-left: 20px;
+}
+.resultmovieslist__date--label {
+  position: absolute;
+  background: #f2994a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f2c94c,
+    #f2994a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f2c94c,
+    #f2994a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 10px;
+  top: 15px;
+  right: 30px;
+  border-radius: 4px;
+}

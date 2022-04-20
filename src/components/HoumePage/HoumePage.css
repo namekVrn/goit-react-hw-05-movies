@@ -1,0 +1,27 @@
+.houmepage__background {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  );
+  border-radius: 6px;
+  padding: 20px;
+  color: white;
+  font-size: 22px;
+  font-family: 'Oswald', sans-serif;
+}
+.houmepage__list{
+    list-style: none;
+}
+.houmepage__item--list{
+    padding-bottom: 15px;
+    color: white;
+    text-decoration: none;
+}
+
