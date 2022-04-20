@@ -1,11 +1,11 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import '../MoviesPage/MoviesPage.css'
 import ResultMovieList from '../ResultMovieList/ResultMovieList';
 const MoviesPage = ({addName, nameFilm}) => {
     const [search, setSearch] = useState('')
 
     const onSearch = (e) => {
-        const {name, value} = e.target;
+        const {name, value} = e.target; // eslint-disable-line
         setSearch(value)
         console.log(search)
     }

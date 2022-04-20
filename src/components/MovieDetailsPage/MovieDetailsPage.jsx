@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, NavLink, Outlet } from 'react-router-dom';
 import { fetchMovieDetails } from '../../service/fetchApi';
 import '../MovieDetailsPage/MovieDetailsPage.css';
-import imagenone from '../../img/reel-alwin-1.gif';
 const MovieDetailsPage = () => {
   const [filmDetails, setFilmDetails] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); // eslint-disable-line
   const { idElem } = useParams();
   const navigate = useNavigate();
   console.log(navigate);

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Link, Outlet } from 'react-router-dom';
 import '../Layout/link.css'
 const Layout = () => {

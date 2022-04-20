@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import Layout  from '../components/Layout/Layout';
 import HoumePage from './HoumePage/HoumePage';
 import MovieDetailsPage from './MovieDetailsPage/MovieDetailsPage';
@@ -12,7 +12,6 @@ export const App = () => {
   const [searchName, setSearchName] = useState('');
   const addName = (name) => {
     setSearchName(name)
-    console.log(searchName)
   }
  
   return (

@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react';
 import { fetchMovieCredits } from '../../service/fetchApi';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
-import Button from 'react-bootstrap/Button';
 import '../Cast/Cast.css'
 const Cast = () => {
   const [dataCast, setDataCast] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); // eslint-disable-line
   const { idElem } = useParams();
   console.log(idElem);
   useEffect(() => {

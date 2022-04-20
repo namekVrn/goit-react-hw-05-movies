@@ -5,7 +5,7 @@ import { fetchMovieReviews } from '../../service/fetchApi';
 import '../Cast/Cast.css'
 const Reviews = () => {
   const [dataCast, setDataCast] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); // eslint-disable-line
   const { idElem } = useParams();
   console.log(idElem);
   useEffect(() => {
