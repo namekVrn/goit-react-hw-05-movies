@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import FilterPanel from '../FilterPanel/FilterPanel'
 import { Link } from 'react-router-dom';
 import '../ResultMovieList/ResultMovieList.css';
 import { fetchSearchMovie } from '../../service/fetchApi';
@@ -19,14 +18,10 @@ const ResultMovieList = ({objParam}) => {
     }
   }, [nameFilm,filter]);
   console.log(dataMovies);
-  // let resultTest = null
-  // if(dataMovies){
-  //   resultTest = dataMovies.filter(iter=>iter.release_date.includes("2017"))
-  // }
-  
+
   return (
     <>
-    {/* {dataMovies && <FilterPanel filterUpdate={filterUpdate}/>} */}
+ 
     <div className="resultmovieslist__preview">
       {error && <p>error</p>}
       {dataMovies &&

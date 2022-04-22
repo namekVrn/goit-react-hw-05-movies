@@ -9,7 +9,7 @@ const MoviesPage = ({addName, objData}) => {
     let arrayListDate = listDate()
     const onSearch = (e) => {
         const {name, value} = e.target; // eslint-disable-line
-        switch (name) {
+        switch (name) {// eslint-disable-line
             case 'serch':
               setSearch(value)
               console.log(value)
