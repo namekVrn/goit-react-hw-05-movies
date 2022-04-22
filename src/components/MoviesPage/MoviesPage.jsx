@@ -1,26 +1,50 @@
 import {useState} from 'react';
 import '../MoviesPage/MoviesPage.css'
 import ResultMovieList from '../ResultMovieList/ResultMovieList';
-const MoviesPage = ({addName, nameFilm}) => {
+import listDate from '../utils/listDate'
+const MoviesPage = ({addName, objData}) => {
     const [search, setSearch] = useState('')
-
+    const [yearFilter, setYearFilter] = useState('');
+    console.log(objData)
+    let arrayListDate = listDate()
     const onSearch = (e) => {
         const {name, value} = e.target; // eslint-disable-line
-        setSearch(value)
-        console.log(search)
+        switch (name) {
+            case 'serch':
+              setSearch(value)
+              console.log(value)
+              break
+            case 'year':
+              setYearFilter(value)
+              console.log(value)
+              break
+          }
     }
+    
     const onSubmitForm = (e) => {
         e.preventDefault()
-        addName(search)
+        addName({nameFilm: search, filter: yearFilter})
     }
     return (
         <>
             <form onSubmit={onSubmitForm} className='moviesPage__form'>
                 <input className="moviesPage__search--input" type="text" name="serch" value={search} onChange={onSearch}/>
                 <button className="moviesPage__serch--btn" type="submit">Serch</button>
+                <label>
+          Поиск по году:
+          <select name="year" onChange={onSearch} >
+            <option  value="" >
+              ...
+            </option>
+            {arrayListDate.map(item => {
+              return <option key={item} value={item.toString()}>{item.toString()}</option>;
+            })}
+          </select>
+        </label>
             </form>
+            
             <div >
-                <ResultMovieList nameFilm={nameFilm}/>
+                <ResultMovieList objParam={objData}/>
             </div>
         </>
     )

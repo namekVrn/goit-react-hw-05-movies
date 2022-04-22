@@ -22,12 +22,21 @@
 .nav__link{
     text-decoration: none;
     font-size: 22px;
+    color: rgb(41, 39, 95);
+    padding: 15px
+}
+.active-link{
+    color:rgb(128, 33, 33);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 22px;
     color: rgb(37, 37, 37);
     padding: 15px
 }
-.nav__link:hover{
+
+/* .nav__link:hover{
     color:brown;
-}
+} */
 .footer__box{
     display: flex;
     margin-top: 10px;

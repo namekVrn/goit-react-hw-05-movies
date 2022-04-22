@@ -1,17 +1,17 @@
 /* eslint-disable */
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import '../Layout/link.css'
 const Layout = () => {
   return (
     <>
       <header className='header__box'>
         <nav>
-          <Link to="/" className="nav__link">
+          <NavLink to="/" className={({isActive})=> isActive ? "active-link": "nav__link"}>
             HomePage
-          </Link>
-          <Link to="/moviespage" className="nav__link">
+          </NavLink>
+          <NavLink to="/moviespage" className={({isActive})=> isActive ? "active-link": "nav__link"}>
             MoviesPage
-          </Link>
+          </NavLink>
         </nav>
       </header>
       <Outlet /> 

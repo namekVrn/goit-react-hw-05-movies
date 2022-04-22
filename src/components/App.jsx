@@ -11,6 +11,7 @@ import NotFound from './NotFound/NotFound'
 export const App = () => {
   const [searchName, setSearchName] = useState('');
   const addName = (name) => {
+    console.log(name)
     setSearchName(name)
   }
  
@@ -19,7 +20,7 @@ export const App = () => {
      <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<HoumePage/>}/>
-          <Route path='/moviespage' element={<MoviesPage addName={addName} nameFilm={searchName}/>}/>
+          <Route path='/moviespage' element={<MoviesPage addName={addName} objData={searchName}/>}/>
           <Route path="/moviespage/:idElem/" element={<MovieDetailsPage/>}>
             <Route path="cast" element={<Cast/>} />
             <Route path="reviews" element={<Reviews/>} />

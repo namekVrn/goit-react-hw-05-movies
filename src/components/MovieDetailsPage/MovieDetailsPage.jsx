@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, NavLink, Outlet } from 'react-router-dom';
 import { fetchMovieDetails } from '../../service/fetchApi';
@@ -7,7 +8,7 @@ const MovieDetailsPage = () => {
   const [error, setError] = useState(null); // eslint-disable-line
   const { idElem } = useParams();
   const navigate = useNavigate();
-  console.log(navigate);
+  console.log(filmDetails);
   useEffect(() => {
     if (idElem) {
       fetchMovieDetails(idElem)
@@ -15,13 +16,14 @@ const MovieDetailsPage = () => {
         .catch(error => setError(error));
     }
   }, [idElem]);
-  console.log(filmDetails);
+
   const goBack = () => {
     navigate(-1);
   };
   //  console.log(poster_path)
   return (
     <>
+      
       {filmDetails && (
         <div className="moviedetailspage__details--box">
           <button
@@ -64,11 +66,25 @@ const MovieDetailsPage = () => {
               </ul>
             )}
             <div className="moviedetailspage__details--inform">
-                <ul className="moviedetailspage__details--list">
-                    <li className="moviedetailspage__details--items"><NavLink className='moviedetailspage__details--items' to="cast">Cast</NavLink></li>
-                    <li className="moviedetailspage__details--items"><NavLink className='moviedetailspage__details--items' to="reviews">Reviews</NavLink></li>
-                </ul>
-                <Outlet />
+              <ul className="moviedetailspage__details--list">
+                <li className="moviedetailspage__details--items">
+                  <NavLink
+                    className="moviedetailspage__details--items"
+                    to="cast"
+                  >
+                    Cast
+                  </NavLink>
+                </li>
+                <li className="moviedetailspage__details--items">
+                  <NavLink
+                    className="moviedetailspage__details--items"
+                    to="reviews"
+                  >
+                    Reviews
+                  </NavLink>
+                </li>
+              </ul>
+              <Outlet />
               {/* Outlet содержит компонент cast или reviews */}
             </div>
           </div>

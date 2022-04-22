@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+import FilterPanel from '../FilterPanel/FilterPanel'
 import { Link } from 'react-router-dom';
 import '../ResultMovieList/ResultMovieList.css';
 import { fetchSearchMovie } from '../../service/fetchApi';
 import imagenone from '../../img/reel-alwin-1.gif'
-const ResultMovieList = ({ nameFilm }) => {
+const ResultMovieList = ({objParam}) => {
+  const {nameFilm, filter} = objParam
+  console.log(nameFilm)
   const [dataMovies, setDataMovies] = useState(null);
   const [error, setError] = useState('');
   useEffect(() => {
@@ -14,13 +17,20 @@ const ResultMovieList = ({ nameFilm }) => {
           setError(true);
         });
     }
-  }, [nameFilm]);
+  }, [nameFilm,filter]);
   console.log(dataMovies);
+  // let resultTest = null
+  // if(dataMovies){
+  //   resultTest = dataMovies.filter(iter=>iter.release_date.includes("2017"))
+  // }
+  
   return (
+    <>
+    {/* {dataMovies && <FilterPanel filterUpdate={filterUpdate}/>} */}
     <div className="resultmovieslist__preview">
       {error && <p>error</p>}
       {dataMovies &&
-        dataMovies.map(
+        dataMovies.filter(({release_date})=>{return release_date.includes(filter.toString())}).map(
           ({
             poster_path,
             original_title,
@@ -34,7 +44,7 @@ const ResultMovieList = ({ nameFilm }) => {
             return (
               
                   <Link className="resultmovieslist__link" key={id} to={`/moviespage/${id}`}>
-                    <div className="resultmovieslist__itemFilm">
+                    <div className="resultmovieslist__itemFilm" >
                       <div className="resultmovieslist__posterBox">
                         <img
                           width="230px"
@@ -54,8 +64,12 @@ const ResultMovieList = ({ nameFilm }) => {
                
             );
           }
-        )}
+        )
+        
+      }
     </div>
+    </>
+    
   );
 };
 export default ResultMovieList;
